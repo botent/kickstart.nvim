@@ -3,7 +3,7 @@ local opt = vim.opt -- local variable for easy referencing
 -- line numbers
 opt.relativenumber = true
 opt.number = true
-
+opt.statuscolumn = '%s %l %r'
 -- tabs and indentation
 opt.tabstop = 4
 opt.shiftwidth = 4

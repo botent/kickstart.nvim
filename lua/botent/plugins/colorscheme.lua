@@ -1,5 +1,5 @@
 return {
-  'folke/tokyonight.nvim',
+  'scottmckendry/cyberdream.nvim',
   priority = 1000,
   config = function()
     local transparent = true -- set to true if you would like to enable transparency
@@ -14,32 +14,43 @@ return {
     local fg_gutter = '#627E97'
     local border = '#547998'
 
-    require('tokyonight').setup {
-      style = 'moon',
-      transparent = transparent,
-      styles = {
-        sidebars = transparent and 'transparent' or 'dark',
-        floats = transparent and 'transparent' or 'dark',
-      },
-      on_colors = function(colors)
-        colors.bg = bg
-        colors.bg_dark = transparent and colors.none or bg_dark
-        colors.bg_float = transparent and colors.none or bg_dark
-        colors.bg_highlight = bg_highlight
-        colors.bg_popup = bg_dark
-        colors.bg_search = bg_search
-        colors.bg_sidebar = transparent and colors.none or bg_dark
-        colors.bg_statusline = transparent and colors.none or bg_dark
-        colors.bg_visual = bg_visual
-        colors.border = border
-        colors.fg = fg
-        colors.fg_dark = fg_dark
-        colors.fg_float = fg
-        colors.fg_gutter = fg_gutter
-        colors.fg_sidebar = fg_dark
-      end,
-    }
+    require('cyberdream').setup {
+      -- Enable transparent background
+      transparent = true,
 
-    vim.cmd 'colorscheme tokyonight'
+      -- Enable italics comments
+      italic_comments = false,
+
+      -- Replace all fillchars with ' ' for the ultimate clean look
+      hide_fillchars = false,
+
+      -- Modern borderless telescope theme
+      borderless_telescope = true,
+
+      -- Set terminal colors used in `:terminal`
+      terminal_colors = true,
+
+      theme = {
+        variant = 'default', -- use "light" for the light variant
+        -- highlights = {
+        --     -- Highlight groups to override, adding new groups is also possible
+        --     -- See `:h highlight-groups` for a list of highlight groups or run `:hi` to see all groups and their current values
+        --
+        --     -- Example:
+        --     Comment = { fg = "#696969", bg = "NONE", italic = true },
+        --
+        --     -- Complete list can be found in `lua/cyberdream/theme.lua`
+        -- },
+        --
+        -- -- Override a color entirely
+        colors = {
+          -- For a list of colors see `lua/cyberdream/colours.lua`
+          -- Example:
+          bg = '#000000',
+          magenta = '#e94560',
+        },
+      },
+    }
+    vim.cmd 'colorscheme cyberdream'
   end,
 }
