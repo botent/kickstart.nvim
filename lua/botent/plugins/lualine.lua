@@ -70,6 +70,7 @@ return {
       options = {
         theme = my_lualine_theme,
         section_separators = { left = '', right = '' },
+        disabled_filetypes = { winbar = { 'NvimTree' }, 'NvimTree' },
       },
       sections = {
         lualine_c = {},

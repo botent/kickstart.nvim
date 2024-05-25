@@ -1,6 +1,6 @@
 return {
   'akinsho/bufferline.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  dependencies = { 'nvim-tree/nvim-tree.lua', 'nvim-tree/nvim-web-devicons' },
   version = '*',
   config = function()
     require('bufferline').setup {
@@ -8,12 +8,14 @@ return {
         mode = 'tabs',
         color_icons = true,
         offsets = {
-          filetype = 'NvimTree',
-          text = 'File Explorer',
-          text_align = 'center',
-          separator = true,
-          highlight = 'NvimTreeNormal',
-          padding = 1,
+          {
+            filetype = 'NvimTree',
+            text = 'File Explorer',
+            text_align = 'center',
+            separator = true,
+            highlight = 'Directory',
+            padding = 1,
+          },
         },
         diagnostics = 'nvim_lsp',
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
