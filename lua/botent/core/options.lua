@@ -37,3 +37,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.swapfile = false
+
+-- code folding
+opt.foldmethod = 'indent'
+opt.foldenable = true
